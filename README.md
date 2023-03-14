@@ -51,13 +51,13 @@ Puedes encontrar mucho más de cómo utilizar este proyecto en nuestra [Wiki](ht
 
 ## Versionado 📌
 
-Usamos [SemVer](http://semver.org/) para el versionado. Para todas las versiones disponibles, mira los [tags en este repositorio](https://github.com/web-v2/check-in.git).
+Usamos [SamirV](http://github.com/web-v2/) para el versionado. Para todas las versiones disponibles, mira los [tags en este repositorio](https://github.com/web-v2/check-in.git).
 
 ## Autores ✒️
 
 _Menciona a todos aquellos que ayudaron a levantar el proyecto desde sus inicios_
 
-* **Samir Vergara V** - *Trabajo Inicial* - [villanuevand](https://github.com/web-v2/check-in.git)
+* **Samir Vergara V** - *Trabajo Inicial* - [SamirV2](https://github.com/web-v2/check-in.git)
 
 También puedes mirar la lista de todos los [contribuyentes](https://github.com/your/project/contributors) quíenes han participado en este proyecto. 
 
@@ -77,4 +77,3 @@ Este proyecto está bajo la Licencia (Tu Licencia) - mira el archivo [LICENSE.md
 
 ---
 ⌨️ con ❤️ por [SamirV2]('git remote add origin https://github.com/web-v2/name-proyect.git') 😊
-
