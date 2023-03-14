@@ -1,0 +1,48 @@
+http://127.0.0.1/Server/CorpoSucre/ElectivaB1/check-in/detalleReserva.php?token=123456789&cant=5
+
+
+CREATE TABLE VUELO (
+	Cod_vuelo INT NOT NULL PRIMARY KEY,
+    Nombre_avion_vuelo VARCHAR(45),
+    No_asientos_vuelo INT
+)
+
+CREATE TABLE RESERVA (
+	Cod_reserva INT NOT NULL PRIMARY KEY,
+    Fecha_reserva date,
+    CiudadSalida_reserva VARCHAR(30),
+    CiudadLlegada_reserva VARCHAR(30),
+    NoAdultos_reserva INT NOT NULL,
+    NoNinos_reserva INT NOT NULL,
+    Valor_vuelo INT NOT NULL
+)
+CREATE TABLE CLIENTE (
+	Id_cliente INT NOT NULL PRIMARY KEY,
+    Tipo_doc_cliente VARCHAR(15),
+    Nombre_cliente VARCHAR(45),
+    Apellido_cliente VARCHAR(45),
+    Email_cliente VARCHAR(25),
+    Telefono_cliente bigint(20),
+    Genero_cliente VARCHAR(10),
+    Fecha_Nac_cliente date,
+    Edad_cliente INT(5)
+)
+
+CREATE TABLE checkin (
+	Cod_checkIn INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
+    Cod_vuelo INT NOT NULL,
+    Id_cliente INT NOT NULL,
+    Cod_reserva INT NOT NULL
+)
+CREATE TABLE detallereserva (
+	idDet INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
+    idReserv INT NOT NULL,
+    idCliente INT NOT NULL,
+    idVuelo INT NOT NULL
+)
+
+ALTER TABLE `checkin` ADD CONSTRAINT `check_fk_1` FOREIGN KEY (`Cod_reserva`) REFERENCES `reserva`(`Cod_reserva`) ON DELETE NO ACTION ON UPDATE RESTRICT; ALTER TABLE `checkin` ADD CONSTRAINT `check_fk_2` FOREIGN KEY (`Cod_vuelo`) REFERENCES `vuelo`(`Cod_vuelo`) ON DELETE NO ACTION ON UPDATE RESTRICT; ALTER TABLE `checkin` ADD CONSTRAINT `check_fk_3` FOREIGN KEY (`Id_cliente`) REFERENCES `cliente`(`Id_cliente`) ON DELETE NO ACTION ON UPDATE RESTRICT; 
+
+
+ALTER TABLE `detallereserva` ADD CONSTRAINT `detalle_fk_1` FOREIGN KEY (`idReserv`) REFERENCES `reserva`(`Cod_reserva`) ON DELETE NO ACTION ON UPDATE RESTRICT; ALTER TABLE `detallereserva` ADD CONSTRAINT `detalle_fk_2` FOREIGN KEY (`idCliente`) REFERENCES `cliente`(`Id_cliente`) ON DELETE NO ACTION ON UPDATE RESTRICT; ALTER TABLE `detallereserva` ADD CONSTRAINT `detalle_fk_3` FOREIGN KEY (`idVuelo`) REFERENCES `vuelo`(`Cod_vuelo`) ON DELETE NO ACTION ON UPDATE RESTRICT; 
+
